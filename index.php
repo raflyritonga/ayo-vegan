@@ -62,7 +62,7 @@
   </head>
   <body>
     <header class="header">
-      <a href="index.html">
+      <a href="index.php">
         <div class="aaaa"></div>
       </a>
       <nav class="main-nav">
@@ -70,7 +70,7 @@
           <li><a class="main-nav-link" href="#how">How it works</a></li>
           <li><a class="main-nav-link" href="#meals">Meals</a></li>
           <li><a class="main-nav-link" href="#pricing">Pricing</a></li>
-          <li><a class="main-nav-link nav-cta" href="frontend/signup.html#cta">Register</a></li>
+          <li><a class="main-nav-link nav-cta" href="frontend/signup.php#cta">Register</a></li>
         </ul>
       </nav>
 
@@ -92,7 +92,7 @@
               eat healthy again. Tailored to your personal tastes and
               nutritional needs.
             </p>
-            <a href="#cta" class="btn btn--full margin-right-sm">Order Now</a
+            <a href="frontend/login.php#cta" class="btn btn--full margin-right-sm">Order Now</a
             >
 
             <a href="#how" class="btn btn--outline">Learn more &darr;</a>
@@ -128,7 +128,7 @@
       <section class="section-how" id="how">
         <div class="container">
           <span class="subheading">How it works</span>
-          <h2 class="heading-secondary">
+          <h2 class="heading-secondary" style="margin-bottom: 12rem;">
             Your daily dose of health in 3 simple steps
           </h2>
         </div>
@@ -136,7 +136,7 @@
         <div class="container grid grid--2-cols grid--center-v costum-grid-c">
 
           <!-- STEP 01 -->
-          <div class="step-text-box">
+          <div class="step-text-box"  style="margin: 10rem 0 0 0;">
             <h3 class="heading-tertiary">
               Tell us what you like (and what not)
             </h3>
@@ -148,17 +148,17 @@
             </p>
           </div>
 
-          <div class="step-img-box">
+          <div class="step-img-box"  style="margin: 10rem 0 0 0;">
             <p class="step-number">01</p>
           </div>
 
           <!-- STEP 02 -->
-          <div class="step-img-box">
+          <div class="step-img-box" style="margin: 10rem 0 0 0;">
             <p class="step-number">02</p>
           </div>
           <div class="step-text-box">
-            <h3 class="heading-tertiary">Approve your weekly meal plan</h3>
-            <p class="step-description">
+            <h3 class="heading-tertiary" style="margin: 10rem 0 3rem 0;">Approve your weekly meal plan</h3>
+            <p class="step-description" style="margin-bottom: 10rem;">
               Once per week, approve the meal plan generated for you by Omnifood
               AI. You can change ingredients, swap entire meals, or even add
               your own recipes.
@@ -166,19 +166,19 @@
           </div>
 
           <!-- STEP 03 -->
-          <div class="step-text-box">
-            <h3 class="heading-tertiary">Receive meals at convenient time</h3>
+          <div class="step-text-box" >
+            <h3 class="heading-tertiary" style="margin: 10rem 0 3rem 0;">Receive meals at convenient time</h3>
             <p class="step-description">
               Best chefs in town will cook your selected meal every day, and we
               will deliver it to your door whenever works best for you. You can
               change delivery schedule and address daily!
             </p>
           </div>
-          <div class="step-img-box">
+          <div class="step-img-box" style="margin: 1rem 0 0 0;">
             <p class="step-number">03</p>
           </div>
         </div>
-        <div class="container grid grid--4-cols" style="margin: 8rem 0 8rem 4rem;">
+        <div class="container grid grid--4-cols" style="margin: 20rem 0  0 4rem;">
           <div class="feature">
             <ion-icon class="feature-icon" name="infinite-outline"></ion-icon>
             <p class="feature-title">Never cook again!</p>
@@ -214,7 +214,7 @@
         </div>
       </section>
 
-      <section class="section-meals" id="meals">
+      <section class="section-meals" id="meals" style="margin-top: -10rem;">
         <div class="container center-text">
           <span class="subheading">Meals</span>
           <h2 class="heading-secondary">Our Menus</h2>
@@ -229,7 +229,7 @@
             />
             <div class="meal-content">
               <div class="meal-tags">
-                <span class="tag tag--vegetarian">Vegetarian</span>
+                <span class="tag tag--vegan">Vegan</span>
               </div>
               <p class="meal-title">Japanese Gyozas</p>
               <ul class="meal-attributes">
@@ -260,7 +260,6 @@
             <div class="meal-content">
               <div class="meal-tags">
                 <span class="tag tag--vegan">Vegan</span>
-                <span class="tag tag--paleo">Paleo</span>
               </div>
               <p class="meal-title">Avocado Salad</p>
               <ul class="meal-attributes">
@@ -327,9 +326,7 @@
         </div>
 
         <div class="container all-recipes">
-          <a href="/frontend/allrecipes.html" class="link"
-            >See all recipes &rarr;</a
-          >
+          <a href="#" onclick="pop()" class="link">See all recipes &rarr;</a>
         </div>
       </section>
 
@@ -341,13 +338,13 @@
           </h2>
         </div>
 
-        <div class="containerc grid grid--3-cols margin-bottom-md" style="align-items: center;">
+        <div class="containerc grid grid--3-cols margin-bottom-md">
           <div class="pricing-plan pricing-plan--starter">
             <header class="plan-header">
               <p class="plan-name">Daily</p>
-              <p class="plan-price"><span>$</span>24</p>
+              <p class="plan-price"><span>$</span>18</p>
               <p class="plan-text">
-                Every meal start with $8
+                Healthy meal starts only with $6
               </p>
             </header>
             <ul class="list">
@@ -368,15 +365,12 @@
                 <span>Delivery is free</span>
               </li>
             </ul>
-            <div class="plan-sing-up">
-              <a href="#" class="btn btn--full">Start eating well</a>
-            </div>
           </div>
 
           <div class="pricing-plan pricing-plan--starter">
             <header class="plan-header">
               <p class="plan-name">Weekly</p>
-              <p class="plan-price"><span>$</span>150</p>
+              <p class="plan-price"><span>$</span>115</p>
               <p class="plan-text">Serving the affortable meal</p>
             </header>
             <ul class="list">
@@ -397,15 +391,12 @@
                 <span>Delivery is free</span>
               </li>
             </ul>
-            <div class="plan-sing-up">
-              <a href="#" class="btn btn--full">Start eating well</a>
-            </div>
           </div>
 
           <div class="pricing-plan pricing-plan--complete">
             <header class="plan-header">
               <p class="plan-name">Monthly</p>
-              <p class="plan-price"><span>$</span>580</p>
+              <p class="plan-price"><span>$</span>489</p>
               <p class="plan-text">Eating well without confused</p>
             </header>
             <ul class="list">
@@ -426,15 +417,12 @@
                 <span>Delivery is free</span>
               </li>
             </ul>
-            <div class="plan-sing-up">
-              <a href="#" class="btn btn--full">Start eating well</a>
-            </div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="footer" style="margin-bottom: 5rem;" id="footer">
+    <footer class="footer" style="margin: 7rem 0;" id="footer">
       <div class="container grid grid--footer">
         <div class="logo-col">
           <p class="copyright">
@@ -460,8 +448,8 @@
         <nav class="nav-col">
           <p class="footer-heading">Account</p>
           <ul class="footer-nav">
-            <li><a class="footer-link" href="frontend/signup.html#cta">Create account</a></li>
-            <li><a class="footer-link" href="#cta">Sign in</a></li>
+            <li><a class="footer-link" href="frontend/signup.php#cta">Create account</a></li>
+            <li><a class="footer-link" href="frontend/login.php#cta">Sign in</a></li>
           </ul>
         </nav>
 
@@ -475,3 +463,9 @@
     </footer>
   </body>
 </html>
+
+<script>
+        function pop(){
+          alert("Sorry, you need to login first")
+        }
+</script>

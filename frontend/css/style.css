@@ -57,6 +57,20 @@
   background-color: #17594a;
 }
 
+
+.main-nav-link.nav-logout:link,
+.main-nav-link.nav-logout:visited {
+  padding: 1.2rem 2.4rem;
+  border-radius: 9px;
+  color: #fff;
+  background-color: #ce7a79;
+}
+
+.main-nav-link.nav-logout:hover,
+.main-nav-link.nav-logout:active {
+  background-color: #821e1e;
+}
+
 /* MOBILE */
 .btn-mobile-nav {
   border: none;
@@ -190,7 +204,7 @@
 /**************************/
 
 .section-how {
-  padding: 9.6rem 0;
+  padding: 9rem 0;
 }
 
 .step-number {
@@ -207,7 +221,6 @@
 
 .step-img-box {
   position: relative;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -528,7 +541,7 @@
 /**************************/
 list-icon .footer {
   padding: 12.8rem 0;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #747474;
 }
 
 .grid--footer {

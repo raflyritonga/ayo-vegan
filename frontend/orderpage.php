@@ -1,3 +1,21 @@
+<?php
+  include '../conn.php';
+    session_start();
+    
+    if(isset($_SESSION ['session_username'])){
+      $username = $_SESSION ['session_username'];
+      $sqlCheck = "SELECT full_name FROM user WHERE username = '$username'";
+      $checklogin = mysqli_query($connection, $sqlCheck);
+      if(mysqli_num_rows($checklogin) > 0){
+        $row = mysqli_fetch_assoc($checklogin);
+        $fullName = $row['full_name'];
+      }
+    } else{
+      header("Location: ../index.php");
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -60,11 +78,11 @@
       }
     </style>
 
-    <title>Omnifood &mdash; All Recipes</title>
+    <title>AyoVegan &mdash; Order Page</title>
   </head>
   <body>
     <header class="header" style="margin-bottom: -6rem;">
-      <a href="index.html">
+      <a href="#">
         <div class="aaaa"></div>
       </a>
 
@@ -72,14 +90,15 @@
         <ul class="main-nav-list">
           <li><a class="main-nav-link" href="#meals">Meals</a></li>
           <li><a class="main-nav-link" href="#pricing">Pricing</a></li>
+          <li><a class="main-nav-link nav-logout" href="../backend/logoutProcess.php"><b>Logout</b></a></li>
         </ul>
       </nav>
     </header>
 
-    <section class="section-meals" id="meals">
+    <section class="section-meals">
       <div class="container center-text">
-        <span class="subheading">Meals</span>
-        <h2 class="heading-secondary">Our Menus</h2>
+        <span class="subheading" style="margin-bottom: 6  rem;">Hello, <?php echo $fullName?>! Lets order your cathering</span>
+        <h2 class="heading-secondary" id="meals">Our Menus</h2>
       </div>
     
       <div class="all-recipes container grid grid--3-cols margin-bottom-md">
@@ -92,7 +111,7 @@
           />
           <div class="meal-content">
             <div class="meal-tags">
-              <span class="tag tag--vegetarian">Vegetarian</span>
+              <span class="tag tag--vegan">Vegan</span>
             </div>
             <p class="meal-title">Japanese Gyozas</p>
             <ul class="meal-attributes">
@@ -121,21 +140,21 @@
           />
           <div class="meal-content">
             <div class="meal-tags">
-              <span class="tag tag--vegetarian">Vegetarian</span>
+              <span class="tag tag--vegan">Vegan</span>
             </div>
             <p class="meal-title">Black Bean</p>
             <ul class="meal-attributes">
               <li class="meal-attribute">
                 <ion-icon class="meal-icon" name="flame-outline"></ion-icon>
-                <span><strong>650</strong> calories</span>
+                <span><strong>475</strong> calories</span>
               </li>
               <li class="meal-attribute">
                 <ion-icon class="meal-icon" name="restaurant-outline"></ion-icon>
-                <span>NutriScore &reg; <strong>74</strong></span>
+                <span>NutriScore &reg; <strong>88</strong></span>
               </li>
               <li class="meal-attribute">
                 <ion-icon class="meal-icon" name="star-outline"></ion-icon>
-                <span><strong>4.9</strong> rating (537)</span>
+                <span><strong>4.4</strong> rating (280)</span>
               </li>
             </ul>
           </div>
@@ -146,7 +165,6 @@
           <div class="meal-content">
             <div class="meal-tags">
               <span class="tag tag--vegan">Vegan</span>
-              <span class="tag tag--paleo">Paleo</span>
             </div>
             <p class="meal-title">Avocado Salad</p>
             <ul class="meal-attributes">
@@ -175,21 +193,21 @@
           />
           <div class="meal-content">
             <div class="meal-tags">
-              <span class="tag tag--vegetarian">Vegetarian</span>
+              <span class="tag tag--vegan">Vegan</span>
             </div>
             <p class="meal-title">Frolict</p>
             <ul class="meal-attributes">
               <li class="meal-attribute">
                 <ion-icon class="meal-icon" name="flame-outline"></ion-icon>
-                <span><strong>650</strong> calories</span>
+                <span><strong>790</strong> calories</span>
               </li>
               <li class="meal-attribute">
                 <ion-icon class="meal-icon" name="restaurant-outline"></ion-icon>
-                <span>NutriScore &reg; <strong>74</strong></span>
+                <span>NutriScore &reg; <strong>80</strong></span>
               </li>
               <li class="meal-attribute">
                 <ion-icon class="meal-icon" name="star-outline"></ion-icon>
-                <span><strong>4.9</strong> rating (537)</span>
+                <span><strong>4.9</strong> rating (87)</span>
               </li>
             </ul>
           </div>
@@ -204,21 +222,21 @@
           />
           <div class="meal-content">
             <div class="meal-tags">
-              <span class="tag tag--vegetarian">Vegetarian</span>
+              <span class="tag tag--vegan">Vegan</span>
             </div>
             <p class="meal-title">Creamy Broccoli</p>
             <ul class="meal-attributes">
               <li class="meal-attribute">
                 <ion-icon class="meal-icon" name="flame-outline"></ion-icon>
-                <span><strong>650</strong> calories</span>
+                <span><strong>550</strong> calories</span>
               </li>
               <li class="meal-attribute">
                 <ion-icon class="meal-icon" name="restaurant-outline"></ion-icon>
-                <span>NutriScore &reg; <strong>74</strong></span>
+                <span>NutriScore &reg; <strong>70</strong></span>
               </li>
               <li class="meal-attribute">
                 <ion-icon class="meal-icon" name="star-outline"></ion-icon>
-                <span><strong>4.9</strong> rating (537)</span>
+                <span><strong>4.2</strong> rating (181)</span>
               </li>
             </ul>
           </div>
@@ -233,21 +251,21 @@
           />
           <div class="meal-content">
             <div class="meal-tags">
-              <span class="tag tag--vegetarian">Vegetarian</span>
+              <span class="tag tag--vegan">Vegan</span>
             </div>
             <p class="meal-title">Pizza-Vegan</p>
             <ul class="meal-attributes">
               <li class="meal-attribute">
                 <ion-icon class="meal-icon" name="flame-outline"></ion-icon>
-                <span><strong>650</strong> calories</span>
+                <span><strong>620</strong> calories</span>
               </li>
               <li class="meal-attribute">
                 <ion-icon class="meal-icon" name="restaurant-outline"></ion-icon>
-                <span>NutriScore &reg; <strong>74</strong></span>
+                <span>NutriScore &reg; <strong>72</strong></span>
               </li>
               <li class="meal-attribute">
                 <ion-icon class="meal-icon" name="star-outline"></ion-icon>
-                <span><strong>4.9</strong> rating (537)</span>
+                <span><strong>4.6</strong> rating (93)</span>
               </li>
             </ul>
           </div>
@@ -255,119 +273,116 @@
       </div>
     </section>
 
-    <div class="container font-c-b">
-      <span class="subheading">Pricing</span>
-      <h2 class="heading-secondary">Eating well without breaking the bank</h2>
-    </div>
-    <div class="containerc grid grid--3-cols margin-bottom-md">
-      <div class="pricing-plan pricing-plan--starter">
-        <header class="plan-header">
-          <p class="plan-name">Big Promo</p>
-          <p class="plan-price"><span>$</span>100</p>
-          <p class="plan-text">per first month. That's just $13 per meal!</p>
-        </header>
-        <ul class="list">
-          <li class="list-item">
-            <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
-            <span>1 meal per day</span>
-          </li>
-          <li class="list-item">
-            <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
-            <span>Order from 11am to 9pm</span>
-          </li>
-          <li class="list-item">
-            <ion-icon class="list-icon" name="close-outline"></ion-icon>
-          </li>
-          <li class="list-item">
-            <ion-icon class="list-icon" name="close-outline"></ion-icon>
-          </li>
-        </ul>
-        <div class="plan-sing-up">
-          <a href="#" class="btn btn--full">Start eating well</a>
-        </div>
+    <section class="section-pricing" id="pricing" style="margin-top: -8rem;">
+      <div class="container font-c-b">
+        <h2 class="heading-secondary">
+          Pick your package
+        </h2>
       </div>
 
-      <div class="pricing-plan pricing-plan--starter">
-        <header class="plan-header">
-          <p class="plan-name">Starter</p>
-          <p class="plan-price"><span>$</span>399</p>
-          <p class="plan-text">per month. That's just $13 per meal!</p>
-        </header>
-        <ul class="list">
-          <li class="list-item">
-            <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
-            <span>2 meal per day</span>
-          </li>
-          <li class="list-item">
-            <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
-            <span>Order from 11am to 9pm</span>
-          </li>
-          <li class="list-item">
-            <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
-            <span>Delivery is free</span>
-          </li>
-          <li class="list-item">
-            <ion-icon class="list-icon" name="close-outline"></ion-icon>
-          </li>
-        </ul>
-        <div class="plan-sing-up">
-          <a href="#" class="btn btn--full">Start eating well</a>
-        </div>
-      </div>
+      <form method="post" action="../frontend/orderform.php">
+        <div class="containerc grid grid--3-cols margin-bottom-md">
+          <div class="pricing-plan pricing-plan--starter">
+            <header class="plan-header">
+              <p class="plan-name">Daily</p>
+              <p class="plan-price"><span>$</span>18</p>
+              <p class="plan-text">
+                Healthy meal starts only with $6
+              </p>
+            </header>
+            <ul class="list">
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span><strong>3 meals</strong> per day</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>Order <strong>24/7</strong></span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="close-outline"></ion-icon>
+                <span>Pick your meals</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="close-outline"></ion-icon>
+                <span>Delivery is free</span>
+              </li>
+            </ul>
+            <div class="plan-sing-up">
+              <input type="submit" name="plan-1" class="btn btn--full" style="background-color: #567a37; color:white" value="Start eating well">
+            </div>
+          </div>
+        </form>
 
-      <div class="pricing-plan pricing-plan--complete">
-        <header class="plan-header">
-          <p class="plan-name">Complete</p>
-          <p class="plan-price"><span>$</span>649</p>
-          <p class="plan-text">per month. That's just $11 per meal!</p>
-        </header>
-        <ul class="list">
-          <li class="list-item">
-            <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
-            <span><strong>3 meals</strong> per day</span>
-          </li>
-          <li class="list-item">
-            <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
-            <span>Order <strong>24/7</strong></span>
-          </li>
-          <li class="list-item">
-            <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
-            <span>Delivery is free</span>
-          </li>
-          <li class="list-item">
-            <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
-            <span>Get access to latest recipes</span>
-          </li>
-        </ul>
-        <div class="plan-sing-up">
-          <a href="#" class="btn btn--full">Start eating well</a>
-        </div>
-      </div>
-    </div>
-
-    <footer class="footer">
-      <div class="container grid grid--footer">
-        <div class="logo-col">
-          <ul class="social-links">
-            <li>
-              <a class="footer-link" href="#"
-                ><ion-icon class="social-icon" name="logo-instagram"></ion-icon
-              ></a>
+        <form method="post" action="../frontend/orderform.php">
+        <div class="pricing-plan pricing-plan--starter">
+          <header class="plan-header">
+            <p class="plan-name">Weekly</p>
+            <p class="plan-price"><span>$</span>115</p>
+            <p class="plan-text">Serving the affortable meal</p>
+          </header>
+          <ul class="list">
+            <li class="list-item">
+              <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+              <span><strong>3 meals</strong> per day</span>
             </li>
-            <li>
-              <a class="footer-link" href="#"
-                ><ion-icon class="social-icon" name="logo-facebook"></ion-icon
-              ></a>
+            <li class="list-item">
+              <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+              <span>Order <strong>24/7</strong></span>
             </li>
-            <li>
-              <a class="footer-link" href="#"
-                ><ion-icon class="social-icon" name="logo-twitter"></ion-icon
-              ></a>
+            <li class="list-item">
+              <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+              <span>Pick your meals</span>
+            </li>
+            <li class="list-item">
+              <ion-icon class="list-icon" name="close-outline"></ion-icon>
+              <span>Delivery is free</span>
             </li>
           </ul>
+          <div class="plan-sing-up">
+          <input type="submit" name="plan-2" class="btn btn--full" style="background-color: #567a37; color:white" value="Start eating well">
+          </div>
+        </div>
+        </form>
 
+        <form method="post" action="../frontend/orderform.php">
+          <div class="pricing-plan pricing-plan--complete">
+            <header class="plan-header">
+              <p class="plan-name">Monthly</p>
+              <p class="plan-price"><span>$</span>489</p>
+              <p class="plan-text">Eating well without confused</p>
+            </header>
+            <ul class="list">
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span><strong>3 meals</strong> per day</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>Order <strong>24/7</strong></span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>Pick your meals </span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>Delivery is free</span>
+              </li>
+            </ul>
+            <div class="plan-sing-up">
+              <input type="submit" name="plan-3" class="btn btn--full" style="background-color: #567a37; color:white" value="Start eating well">
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <footer class="footer" style="margin-bottom: 5rem;">
+      <div class="container grid grid--footer">
+        <div class="logo-col">
           <p class="copyright">
-            Copyright &copy; <span class="year">2027</span> by Omnifood, Inc.
+            Copyright &copy; <span class="year">2023</span> by AyoVegan, Inc.
             All rights reserved.
           </p>
         </div>
@@ -379,9 +394,7 @@
               4000 Kristal Kondominium Street Pualam Shah Alam
             </p>
             <p>
-              <a class="footer-link" href="tel:415-201-6370">415-201-6370</a
-              ><br />
-              <a class="footer-link" href="mailto:hello@omnifood.com"
+              <a class="footer-link" href="mailto:2023199021@student.uitm.edu.my"
                 >hello@ayovegan.com</a
               >
             </p>

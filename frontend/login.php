@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="img/logologo/ayovegan-logo-no-bg.png" />
     <link rel="apple-touch-icon" href="img/logologo/ayovegan-logo-no-bg.png" />
-    <title>AyoVegan &mdash; Signup</title>
+    <title>AyoVegan &mdash; Login</title>
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/queries.css" />
@@ -33,15 +33,15 @@
   </head>
   <body>
     <header class="header">
-      <a href="../index.html">
+      <a href="../index.php">
         <div class="aaaa"></div>
       </a>
       <nav class="main-nav">
         <ul class="main-nav-list">
-          <li><a class="main-nav-link" href="../index.html#how"><b>How it works</b></a></li>
-          <li><a class="main-nav-link" href="../index.html#meals"><b>Meals</b></a></li>
-          <li><a class="main-nav-link" href="../index.html#pricing"><b>Pricing</b></a></li>
-          <li><a class="main-nav-link nav-cta" href="../index.html#cta"><b>Login</b></a></li>
+          <li><a class="main-nav-link" href="../index.php#how"><b>How it works</b></a></li>
+          <li><a class="main-nav-link" href="../index.php#meals"><b>Meals</b></a></li>
+          <li><a class="main-nav-link" href="../index.php#pricing"><b>Pricing</b></a></li>
+          <li><a class="main-nav-link nav-cta" href="signup.php#cta"><b>Register</b></a></li>
         </ul>
       </nav>
 
@@ -55,65 +55,36 @@
       <div class="container">
         <div class="cta">
           <div class="cta-text-box">
-            <h2 class="heading-secondary">Create your account</h2>
-              <p class="cta-text">
-                Healthy and tasty meals are waiting for you. Start
-                eating well today. You can cancel or pause anytime. And the
-                first meal is on us!
-              </p>
+            <h2 class="heading-secondary">Get your meal right now!</h2>
+            <p class="cta-text">
+              Login and start your healthy life with us
+            </p>
 
-            <form class="cta-form" name="sign-up" netlify>
+            <form class="cta-form" name="sign-up" netlify method="post" action="../backend/loginProcess.php">
               <div>
-                <label for="full-name">Full Name</label>
+                <label for="full-name">Username</label>
                 <input
-                  id="full-name"
-                  type="text"
-                  placeholder="John Smith"
-                  name="full-name"
-                  required
-                />
-              </div>
-
-              <div>
-                <label for="user-name">Username</label>
-                <input
-                  id="user-name"
+                  id="username"
                   type="text"
                   placeholder="johnsmith"
-                  name="user-name"
+                  name="login_username"
                   required
                 />
               </div>
 
               <div>
-                <label for="full-name">Password</label>
-                <input id="password" type="password" name="password" placeholder="your password" required />
-              </div>
-
-              <div>
-                <label for="full-name">Phone Number</label>
+                <label for="email">Password</label>
                 <input
-                  id="phone-number"
-                  type="text"
-                  placeholder="+60 1165 439 537"
-                  name="phone-number"
+                  id="password"
+                  type="password"
+                  placeholder="your password"
+                  name="login_password"
                   required
                 />
               </div>
-
-              <div>
-                <label for="email">Email address</label>
-                <input
-                  id="email"
-                  type="email"
-                  placeholder="me@example.com"
-                  name="email"
-                  required
-                />
-              </div>
-
-              <button class="btn btn--form">Signup</button>
+              <button class="btn btn--form" name="login">Login</button>
             </form>
+            <a href="signup.php#cta" class="link" style="margin-top: 3rem; font-size: 1.5rem;">Create Your Account Here &rarr;</a>
           </div>
           <div
             class="cta-img-box"
@@ -146,7 +117,7 @@
           </ul>
 
           <p class="copyright">
-            Copyright &copy; <span class="year">2027</span> by Omnifood, Inc.
+            Copyright &copy; <span class="year">2023</span> by AyoVegan, Inc.
             All rights reserved.
           </p>
         </div>
@@ -168,15 +139,15 @@
         <nav class="nav-col">
           <p class="footer-heading">Account</p>
           <ul class="footer-nav">
-            <li><a class="footer-link" href="#cta">Create account</a></li>
-            <li><a class="footer-link" href="../index.html#cta">Sign in</a></li>
+            <li><a class="footer-link" href="signup.php#cta">Create account</a></li>
+            <li><a class="footer-link" href="#">Sign in</a></li>
           </ul>
         </nav>
 
         <nav class="nav-col">
           <p class="footer-heading">Resources</p>
           <ul class="footer-nav">
-            <li><a class="footer-link" href="../index.html#meals">Recipe directory </a></li>
+            <li><a class="footer-link" href="../index.php#meals">Recipe directory </a></li>
           </ul>
         </nav>
       </div>

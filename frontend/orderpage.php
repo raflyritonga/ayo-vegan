@@ -405,7 +405,7 @@
           <p class="footer-heading">Account</p>
           <ul class="footer-nav">
             <li><a class="footer-link" href="#">Create account</a></li>
-            <li><a class="footer-link" href="#">Sign in</a></li>
+            <li><a class="footer-link" href="#">Login</a></li>
           </ul>
         </nav>
 

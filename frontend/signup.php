@@ -41,7 +41,7 @@
           <li><a class="main-nav-link" href="../index.php#how"><b>How it works</b></a></li>
           <li><a class="main-nav-link" href="../index.php#meals"><b>Meals</b></a></li>
           <li><a class="main-nav-link" href="../index.php#pricing"><b>Pricing</b></a></li>
-          <li><a class="main-nav-link nav-cta" href="login.html"><b>Login</b></a></li>
+          <li><a class="main-nav-link nav-cta" href="../frontend/login.php"><b>Login</b></a></li>
         </ul>
       </nav>
 
@@ -170,7 +170,7 @@
           <p class="footer-heading">Account</p>
           <ul class="footer-nav">
             <li><a class="footer-link" href="#cta">Create account</a></li>
-            <li><a class="footer-link" href="login.html">Sign in</a></li>
+            <li><a class="footer-link" href="../frontend/login.php">Login</a></li>
           </ul>
         </nav>
 

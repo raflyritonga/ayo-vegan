@@ -10,6 +10,7 @@
     $checklogin = mysqli_query($connection, $sqlCheck);
     if(mysqli_num_rows($checklogin) > 0){
       $row = mysqli_fetch_assoc($checklogin);
+      $fullName = $row['full_name'];
     }
   }
 
@@ -81,7 +82,7 @@
                 <input
                   id="full-name"
                   type="text"
-                  name="full-name"
+                  name="confirm_fullName"
                   value=<?php echo $row['full_name']?>
                   required
                 />
@@ -92,8 +93,9 @@
                 <input
                   id="user-name"
                   type="text"
-                  name="user-name"
+                  name="confirm_username"
                   value=<?php echo $row['username']?>
+                  readonly
                   required
                 />
               </div>
@@ -103,7 +105,7 @@
                 <input
                   id="adress"
                   type="text"
-                  name="adress"
+                  name="confirm_adress"
                   placeholder= "Enter your adress"
                   required
                 />
@@ -114,7 +116,7 @@
                 <input 
                 id="package" 
                 type="text" 
-                name="package" 
+                name="confirm_package" 
                 value= <?php echo $package?>
                 required 
                 readonly/>
@@ -125,7 +127,7 @@
                 <input
                   id="phone-number"
                   type="text"
-                  name="phone-number"
+                  name="confirm_phoneNumber"
                   value= <?php echo $row['phone']?>
                   required
                 />
@@ -136,11 +138,12 @@
                 <input
                   id="order-date"
                   type="date"
-                  name="order-date"
+                  name="confirm_orderDate"
                   value= <?php
                     $currentdate = date("Y-m-d");
                     echo $currentdate;
                   ?>
+                  readonly
                   required
                 />
               </div>

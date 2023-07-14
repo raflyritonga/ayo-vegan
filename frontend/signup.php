@@ -114,7 +114,7 @@
 
               <button class="btn btn--form" name="signup">Register</button>
             </form>
-            <a href="login.html" class="link" style="margin-top: 3rem; font-size: 1.5rem;">Already have account? Login Here &rarr;</a>
+            <a href="login.php" class="link" style="margin-top: 3rem; font-size: 1.5rem;">Already have account? Login Here &rarr;</a>
           </div>
           <div
             class="cta-img-box"

@@ -15,7 +15,7 @@
 
           if($addOrder){
                echo '<script>alert("Ordering Successful")</script>';
-               echo "<script>window.location = '../frontend/orderpage.php'</script>";
+               echo "<script>window.location = 'https://wa.me/6281294537182'</script>" ;
           }               
      } else{
           echo '<script>alert("Ordering Failed")</script>';

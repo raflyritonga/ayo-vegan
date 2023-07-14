@@ -10,7 +10,6 @@
     $checklogin = mysqli_query($connection, $sqlCheck);
     if(mysqli_num_rows($checklogin) > 0){
       $row = mysqli_fetch_assoc($checklogin);
-      $fullName = $row['full_name'];
     }
   }
 
@@ -80,10 +79,10 @@
               <div>
                 <label for="full-name">Full Name</label>
                 <input
-                  id="full-name"
-                  type="text"
-                  name="confirm_fullName"
-                  value=<?php echo $row['full_name']?>
+                  id = "full-name"
+                  type = "text"
+                  name = "confirm_fullName"
+                  value = <?php echo $row['full_name'];?>
                   required
                 />
               </div>
